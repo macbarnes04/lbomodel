@@ -32,5 +32,4 @@ transaction_multiple <- function(sector, performance, RoIC, risk){
   print(statement)
 }
 
-
-
+transaction_multiple("aerospace", 0.85, 0.76, 0.43)
