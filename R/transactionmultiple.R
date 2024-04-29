@@ -15,7 +15,7 @@
 transaction_multiple <- function(sector, performance, RoIC, risk){
   library(readxl)
   file_name <- paste(sector, ".xlsx", sep = "")
-  file_path <- system.file("inst", file_name, package="lbomodel")
+  file_path <- system.file(file_name, package="lbomodel")
   print(file_name)
   data <- read_excel(file_path)
   multiples <- data[[6]]
