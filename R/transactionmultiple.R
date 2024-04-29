@@ -13,9 +13,10 @@
 #' transaction_multiple(aerospace)
 
 transaction_multiple <- function(sector, performance, RoIC, risk){
-  base_loc <- "lbomodel/inst/"
-  file_loc <- paste(base_loc, sector, ".xlsx", sep = "")
-  data <- read_excel(file_loc)
+  library(readxl)
+  file_name <- paste(sector, ".xlsx", sep = "")
+  file_path <- system.file(file_name, package = "lbomodel")
+  data <- read_excel(file_path)
   multiples <- data[[6]]
   dev <- sd(multiples)
   avg <- mean(multiples)
