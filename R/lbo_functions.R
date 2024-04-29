@@ -1,14 +1,20 @@
-#' A basic function
+#' Goodwill
 #'
-#' This function allows you to add two number together
-#' @param x first number to add 
-#' @param y second number to add
-#' @keywords add, sum 
+#' This function calculates the goodwill given amount paid for equity and net book value of assets 
+#' @param equity Amount paid for equity
+#' @param assets Less: Net Book Value of Assets
+#' @keywords 
 #' @export
 #' @examples
-#' function1(1, 2)
+#' goodwill(1047, 642)
 
-function1 <- function(x, y){
-  result = x + y
-  print(result)
+goodwill <- function(equity, assets){
+  result <-  equity - assets
+  statement <- "Your Goodwill is:"
+  output <- paste(statement, result)
+  print(output)
 }
+
+
+
+

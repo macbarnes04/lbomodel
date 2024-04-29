@@ -10,12 +10,13 @@
 #' @param risk On a percentile scale (1-99) what is your perceived risk of this company relative to its peers? input as 0-1 (ex. 0.99 means 99 percentile). 
 #' @export
 #' @examples
-#' transaction_multiple(aerospace)
+#' transaction_multiple("aerospace", 0.85, 0.76, 0.43)
 
 transaction_multiple <- function(sector, performance, RoIC, risk){
   library(readxl)
   file_name <- paste(sector, ".xlsx", sep = "")
   file_path <- system.file("inst", file_name, package="lbomodel")
+  print(file_name)
   data <- read_excel(file_path)
   multiples <- data[[6]]
   dev <- sd(multiples)
